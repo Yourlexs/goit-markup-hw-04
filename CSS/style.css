@@ -148,30 +148,19 @@ nav {
   letter-spacing: 0.02em;
 }
 
-.address-list-item a::before {
-  content: " ";
-  margin-right: 10px;
-}
 
 .icon-mail {
-  fill: var(--primary-text-color);
+  fill: currentColor;
   width: 16px;
   height: 12px;
   margin-right: 10px;
 }
 
 .icon-phone {
-  fill: var(--primary-text-color);
+  fill: currentColor;
   width: 10px;
   height: 16px;
   margin-right: 10px;
-}
-
-.icon-mail:hover,
-.icon-mail:focus,
-.icon-phone:hover,
-.icon-phone:focus {
-  fill: var(--accent-color);
 }
 
 /* Главная страница */
@@ -363,6 +352,7 @@ nav {
 
 .social-list a {
   display: flex;
+  color: var(--icon-color);
   width: 44px;
   height: 44px;
   padding: 12px;
@@ -371,18 +361,14 @@ nav {
 .social-list a:hover,
 .social-list a:focus {
   background-color: var(--accent-color);
+  color: var(--primary-white-color);
   border-radius: 50%;
 }
 
 .social-list svg {
-  fill: var(--icon-color);
+  fill: currentColor;
   width: 20px;
   height: 20px;
-}
-
-.social-list svg:hover,
-.social-list:focus {
-  fill: var(--primary-white-color);
 }
 
 /* Клиенты */
@@ -398,10 +384,12 @@ nav {
 }
 
 .client-list a {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--icon-color);
   width: 170px;
   height: 90px;
-  padding: 20px 45px;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
 }
@@ -412,19 +400,14 @@ nav {
 .client-list a:hover,
 .client-list a:focus {
   border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
-.client-list svg:hover,
-.client-list svg:focus,
-footer svg:hover,
-footer svg:focus {
-  fill: var(--accent-color);
-}
 
 .client-list svg {
   width: 90px;
   height: 45px;
-  fill: var(--icon-color);
+  fill: currentColor;
 }
 
 
