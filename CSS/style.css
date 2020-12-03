@@ -4,6 +4,7 @@
 /* вторичный цвет фона #F5F4FA; */
 /* акцент #2196F3; */
 /* герой и футер фон #2F303A; */
+/*иконки соц.сетей и клиентов #AFB1B8; */
 
 :root {
   --primary-text-color: #757575;
@@ -12,6 +13,7 @@
   --primary-white-color: #ffffff;
   --secondary-background-color: #f5f4fa;
   --hero-bgr-color: #2f303a;
+  --icon-color: #afb1b8;
 }
 
 body {
@@ -137,6 +139,8 @@ nav {
 }
 
 .address-list a {
+  display: inline-flex;
+  align-items: center;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -144,15 +148,54 @@ nav {
   letter-spacing: 0.02em;
 }
 
+.address-list-item a::before {
+  content: " ";
+  margin-right: 10px;
+}
+
+.icon-mail {
+  fill: var(--primary-text-color);
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.icon-phone {
+  fill: var(--primary-text-color);
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.icon-mail:hover,
+.icon-mail:focus,
+.icon-phone:hover,
+.icon-phone:focus {
+  fill: var(--accent-color);
+}
+
 /* Главная страница */
 
 /* Hero */
 
 .hero {
-  background-color: var(--hero-bgr-color);
+  max-width: 1600px;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-color: var(--hero-bgr-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -188,11 +231,23 @@ nav {
 .feature-list {
   display: flex;
 }
-.feature-list li {
+.feature-list-item {
   width: 270px;
 }
-.feature-list li:not(:last-child) {
+.feature-list-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.icon-background {
+  width: 270px;
+  height: 120px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  background-color: var(--secondary-background-color);
+}
+.feature-list svg {
+  width: 70px;
+  height: 70px;
 }
 
 .features h3 {
@@ -258,9 +313,11 @@ nav {
 .about-team-list {
   display: flex;
 }
-.about-team-list li {
+.about-team-list>li {
   width: 270px;
   background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .about-team-list li:not(:last-child) {
   margin-right: 30px;
@@ -268,22 +325,6 @@ nav {
 
 .team-card {
   padding: 30px;
-  /* Установит стили правой рамки */
-  border-right-width: 1px;
-  border-right-style: solid;
-  border-right-color: transparent;
-  /* Установит стили нинжней рамки */
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
-  /* Установит стили левой рамки */
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-left-color: transparent;
-  /* Стили углов рамки */
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  overflow: hidden;
 }
 
 /* Имена сотрудников */
@@ -303,18 +344,96 @@ nav {
 
 .position {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
   text-align: center;
 }
 
+/* Соц.сети */
+
+.social-list {
+  display: flex;
+}
+
+.social-list li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list a {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+}
+
+.social-list a:hover,
+.social-list a:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.social-list svg {
+  fill: var(--icon-color);
+  width: 20px;
+  height: 20px;
+}
+
+.social-list svg:hover,
+.social-list:focus {
+  fill: var(--primary-white-color);
+}
+
+/* Клиенты */
+
+.client {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.client-list {
+  display: flex;
+  margin: 0;
+}
+
+.client-list a {
+  display: inline-block;
+  width: 170px;
+  height: 90px;
+  padding: 20px 45px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+}
+.client-list li:not(:first-child) {
+  margin-left: 30px;
+}
+
+.client-list a:hover,
+.client-list a:focus {
+  border-color: var(--accent-color);
+}
+
+.client-list svg:hover,
+.client-list svg:focus,
+footer svg:hover,
+footer svg:focus {
+  fill: var(--accent-color);
+}
+
+.client-list svg {
+  width: 90px;
+  height: 45px;
+  fill: var(--icon-color);
+}
+
+
 /* Футер */
 
 footer {
   background-color: var(--hero-bgr-color);
 }
+
 
 footer .logo {
   display: inline-block;
@@ -342,9 +461,40 @@ footer a {
 }
 
 footer .container {
+  display: flex;
+  align-items: baseline;
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+.footer-social {
+  margin-left: 70px;
+}
+
+.footer-social h3{
+  margin-bottom: 20px;
+  color: var(--primary-white-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  
+}
+
+footer .social-list {
+  margin: 0;
+}
+
+.footer-social a{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-social svg {
+  fill: var(--primary-white-color);
+}
+
 /* Portfolio main */
 
 .portfolio.container {
@@ -400,6 +550,11 @@ button:focus {
   min-height: 404px;
   margin-right: 30px;
   margin-bottom: 30px;
+}
+
+.portfolio-list li:hover,
+.portfolio-list li:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* Убираем каждому 3у элементу в списке правый отступ */
