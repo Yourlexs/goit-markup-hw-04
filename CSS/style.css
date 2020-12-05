@@ -228,9 +228,11 @@ nav {
 }
 
 .icon-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 270px;
   height: 120px;
-  padding: 25px 100px;
   margin-bottom: 30px;
   background-color: var(--secondary-background-color);
 }
@@ -352,10 +354,11 @@ nav {
 
 .social-list a {
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--icon-color);
   width: 44px;
   height: 44px;
-  padding: 12px;
 }
 
 .social-list a:hover,
@@ -535,8 +538,12 @@ button:focus {
   margin-bottom: 30px;
 }
 
-.portfolio-list li:hover,
-.portfolio-list li:focus {
+.portfolio-list a {
+  display: block;
+}
+
+.portfolio-list a:hover,
+.portfolio-list a:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
