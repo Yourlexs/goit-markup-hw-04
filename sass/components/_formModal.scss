@@ -1,0 +1,132 @@
+.inputField {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inputField__box {
+    position: relative;
+    color: var(--title-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inputBox:focus-within {
+    color: var(--accent-color);
+}
+
+.form__title{
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    color: var(--title-text-color);
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.inputField__Title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+
+.inputField__input {
+    width: 100%;
+    padding: 11px 0 11px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inputField__input:focus,
+.textareaField__textarea:focus {
+    border-color: var(--accent-color);
+    cursor: pointer;
+    outline: 0;
+}
+
+.inputField__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.textareaField {
+    margin-bottom: 20px;
+}
+
+.textareaField__textarea {
+    padding: 12px 16px;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textareaField__textarea::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.checkboxField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.checkboxField__input:checked + .checkboxField__icon {
+    background-color: var(--accent-color);
+    background-image: url(../images/icon-check.svg);
+    background-origin: border-box;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.checkboxField__icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 15px;
+    background-image: url(../images/square.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkboxField__agreement {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+
+.checkboxField__agreement {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.checkboxField__button {
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
